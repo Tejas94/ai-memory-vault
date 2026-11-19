@@ -10,9 +10,7 @@ instead of your whole history. It runs on Cloudflare's free tier, or on any comp
 Docker. To see the exact Cloudflare setup I run myself, check the
 [`cloudflare-reference` branch](../../tree/cloudflare-reference).
 
-[![AI Memory Vault in 87 seconds: save in Claude, recall in ChatGPT](docs/media/vault-explainer.jpg)](docs/media/vault-explainer.mp4)
-
-▶ [Watch the 87-second video](docs/media/vault-explainer.mp4) ([4K](docs/media/vault-explainer-4k.mp4), [portrait for phones](docs/media/vault-explainer-portrait.mp4))
+https://github.com/user-attachments/assets/641dfcb5-d277-4b66-9fd6-b871a7c2b050
 
 ## What it does
 
