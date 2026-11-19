@@ -1,0 +1,15 @@
+# Keep secrets, personal data and everything the container doesn't need out of the image
+.git
+.env
+.env.*
+.dev.vars
+*.db
+*.db-*
+*.sqlite
+node_modules
+.wrangler
+.claude
+docs
+evals
+test
+scripts

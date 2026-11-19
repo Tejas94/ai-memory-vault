@@ -1,0 +1,43 @@
+{
+	"name": "vault",
+	"license": "MIT",
+	"version": "0.1.0",
+	"private": true,
+	"engines": {
+		"node": ">=22.16"
+	},
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy",
+		"db:local": "wrangler d1 migrations apply vault --local",
+		"cf-typegen": "wrangler types",
+		"start:node": "tsx node/server.ts",
+		"reindex:node": "tsx node/reindex.ts",
+		"type-check": "tsc --noEmit && tsc --noEmit -p node",
+		"test": "vitest run && npm run test:node",
+		"test:node": "tsx --test node/*.test.ts"
+	},
+	"dependencies": {
+		"@cloudflare/workers-oauth-provider": "^0.8.1",
+		"@modelcontextprotocol/sdk": "1.29.0",
+		"agents": "^0.17.1",
+		"hono": "^4.12.27",
+		"zod": "^4.4.3"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-plugin": "^1.4.6",
+		"@cloudflare/workers-types": "^5.20261019.1",
+		"@types/node": "^24.19.2",
+		"tsx": "^4.20.6",
+		"typescript": "6.0.3",
+		"vitest": "^4.1.0",
+		"wrangler": "^4.151.3"
+	},
+	"allowScripts": {
+		"esbuild@0.28.1": true,
+		"esbuild@0.28.2": true,
+		"workerd@1.20260815.1": true,
+		"workerd@1.20261019.1": true
+	},
+	"type": "module"
+}

@@ -1,0 +1,20 @@
+# Secrets — never commit
+.dev.vars
+.env
+.env.*
+!.env.example
+# Personal data — never commit
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+out/
+data/
+exports/
+# Build / tooling
+node_modules/
+.wrangler/
+dist/
+.DS_Store
+.claude/launch.json
