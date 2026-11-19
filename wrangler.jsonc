@@ -1,0 +1,68 @@
+/**
+ * Vault Worker config. https://developers.cloudflare.com/workers/wrangler/configuration/
+ * Secrets (set by the owner with `wrangler secret put`, never here):
+ *   GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, COOKIE_ENCRYPTION_KEY, ALLOWED_EMAIL
+ */
+{
+	// Editor autocomplete only: the file arrives with "npm install". Not a database schema.
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "vault",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-09-01",
+	// Only the main https://vault.<subdomain>.workers.dev address; no extra per-version preview addresses
+	"workers_dev": true,
+	"preview_urls": false,
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
+	"migrations": [
+		{
+			"new_sqlite_classes": [
+				"VaultMCP"
+			],
+			"tag": "v1"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"class_name": "VaultMCP",
+				"name": "MCP_OBJECT"
+			}
+		]
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "vault",
+			// Replace with the id printed by `npx wrangler d1 create vault`
+			"database_id": "00000000-0000-0000-0000-000000000000",
+			"migrations_dir": "migrations"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "OAUTH_KV",
+			// Replace with the id printed by `npx wrangler kv namespace create OAUTH_KV`
+			"id": "00000000000000000000000000000000"
+		}
+	],
+	// Workers AI (free tier): reads each saved item and finds the knowledge-graph links
+	"ai": {
+		"binding": "AI"
+	},
+	// Meaning search: created once with `wrangler vectorize create vault-embeddings --dimensions=1024 --metric=cosine`
+	"vectorize": [
+		{
+			"binding": "VECTORS",
+			"index_name": "vault-embeddings"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	"dev": {
+		"port": 8788
+	}
+}

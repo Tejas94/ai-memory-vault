@@ -1,0 +1,14 @@
+// Used only by scripts/graph-sync.ts --remote: the same D1 database as wrangler.jsonc, reached remotely.
+// Replace the database_id with yours (the same one as in wrangler.jsonc).
+{
+	"name": "vault-graph-sync",
+	"compatibility_date": "2026-09-01",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "vault",
+			"database_id": "00000000-0000-0000-0000-000000000000",
+			"remote": true
+		}
+	]
+}
