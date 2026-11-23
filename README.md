@@ -10,7 +10,7 @@ instead of your whole history. It's built for Cloudflare's free tier, and this b
 Cloudflare setup I run myself. For a version that also runs on any computer with Node or Docker,
 check the [`main` branch](../../tree/main).
 
-https://github.com/user-attachments/assets/641dfcb5-d277-4b66-9fd6-b871a7c2b050
+https://github.com/user-attachments/assets/a980933e-1fd0-4922-b048-82c947074553
 
 ## What it does
 
@@ -29,7 +29,7 @@ https://github.com/user-attachments/assets/641dfcb5-d277-4b66-9fd6-b871a7c2b050
 
 More detail: [how Vault works](docs/how-it-works.md).
 
-## Tested, not guessed
+## Test results
 
 Every change was measured with the same exam: questions whose answers are known facts, scored by
 whether those facts come back. My questions are private, but the exam runner is in
